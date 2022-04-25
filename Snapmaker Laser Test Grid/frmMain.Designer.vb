@@ -32,10 +32,22 @@ Partial Class frmMain
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.grpMatrixSpecs = New System.Windows.Forms.GroupBox()
+        Me.chkCross = New System.Windows.Forms.CheckBox()
+        Me.chkInnerBox = New System.Windows.Forms.CheckBox()
+        Me.chkMiddleBox = New System.Windows.Forms.CheckBox()
+        Me.chkOuterBox = New System.Windows.Forms.CheckBox()
+        Me.cboOrigin = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.nudSpeedIncrement = New System.Windows.Forms.NumericUpDown()
+        Me.nudMatrixSize = New System.Windows.Forms.NumericUpDown()
+        Me.nudSpeedStart = New System.Windows.Forms.NumericUpDown()
+        Me.nudLaserStart = New System.Windows.Forms.NumericUpDown()
+        Me.nudLaserIncrement = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.nudTextSpeed = New System.Windows.Forms.NumericUpDown()
         Me.lblTextPower = New System.Windows.Forms.Label()
+        Me.nudTextPower = New System.Windows.Forms.NumericUpDown()
         Me.btnExport = New System.Windows.Forms.Button()
         Me.imgIcons = New System.Windows.Forms.ImageList(Me.components)
         Me.txtGCode = New System.Windows.Forms.TextBox()
@@ -43,34 +55,20 @@ Partial Class frmMain
         Me.tmrOriginUpdate = New System.Windows.Forms.Timer(Me.components)
         Me.btnCopy = New System.Windows.Forms.Button()
         Me.btnPreview = New System.Windows.Forms.Button()
-        Me.picThumbnail = New System.Windows.Forms.PictureBox()
         Me.dlgSave = New System.Windows.Forms.SaveFileDialog()
         Me.errProvider = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.nudTextSpeed = New System.Windows.Forms.NumericUpDown()
-        Me.nudTextPower = New System.Windows.Forms.NumericUpDown()
-        Me.chkCross = New System.Windows.Forms.CheckBox()
-        Me.chkInnerBox = New System.Windows.Forms.CheckBox()
-        Me.chkMiddleBox = New System.Windows.Forms.CheckBox()
-        Me.chkOuterBox = New System.Windows.Forms.CheckBox()
-        Me.cboOrigin = New System.Windows.Forms.ComboBox()
-        Me.nudSpeedIncrement = New System.Windows.Forms.NumericUpDown()
-        Me.nudMatrixSize = New System.Windows.Forms.NumericUpDown()
-        Me.nudSpeedStart = New System.Windows.Forms.NumericUpDown()
-        Me.nudLaserStart = New System.Windows.Forms.NumericUpDown()
-        Me.nudLaserIncrement = New System.Windows.Forms.NumericUpDown()
         CType(Me.picGraphics, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlGraphics.SuspendLayout()
         Me.grpMatrixSpecs.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.picThumbnail, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.errProvider, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nudTextSpeed, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nudTextPower, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudSpeedIncrement, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudMatrixSize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudSpeedStart, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudLaserStart, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudLaserIncrement, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.nudTextSpeed, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudTextPower, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.errProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picGraphics
@@ -166,6 +164,70 @@ Partial Class frmMain
         Me.grpMatrixSpecs.TabStop = False
         Me.grpMatrixSpecs.Text = "Test Grid"
         '
+        'chkCross
+        '
+        Me.chkCross.AutoSize = True
+        Me.chkCross.Checked = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.DrawCrossMark
+        Me.chkCross.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkCross.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "DrawCrossMark", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.chkCross.Location = New System.Drawing.Point(22, 259)
+        Me.chkCross.Name = "chkCross"
+        Me.chkCross.Size = New System.Drawing.Size(108, 24)
+        Me.chkCross.TabIndex = 16
+        Me.chkCross.Text = "Cross mark"
+        Me.chkCross.UseVisualStyleBackColor = True
+        '
+        'chkInnerBox
+        '
+        Me.chkInnerBox.AutoSize = True
+        Me.chkInnerBox.Checked = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.DrawInnerBox
+        Me.chkInnerBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkInnerBox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "DrawInnerBox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.chkInnerBox.Location = New System.Drawing.Point(246, 229)
+        Me.chkInnerBox.Name = "chkInnerBox"
+        Me.chkInnerBox.Size = New System.Drawing.Size(94, 24)
+        Me.chkInnerBox.TabIndex = 15
+        Me.chkInnerBox.Text = "Inner box"
+        Me.chkInnerBox.UseVisualStyleBackColor = True
+        '
+        'chkMiddleBox
+        '
+        Me.chkMiddleBox.AutoSize = True
+        Me.chkMiddleBox.Checked = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.DrawMiddleBox
+        Me.chkMiddleBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkMiddleBox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "DrawMiddleBox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.chkMiddleBox.Location = New System.Drawing.Point(131, 229)
+        Me.chkMiddleBox.Name = "chkMiddleBox"
+        Me.chkMiddleBox.Size = New System.Drawing.Size(103, 24)
+        Me.chkMiddleBox.TabIndex = 14
+        Me.chkMiddleBox.Text = "Middle box"
+        Me.chkMiddleBox.UseVisualStyleBackColor = True
+        '
+        'chkOuterBox
+        '
+        Me.chkOuterBox.AutoSize = True
+        Me.chkOuterBox.Checked = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.DrawOuterBox
+        Me.chkOuterBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkOuterBox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "DrawOuterBox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.chkOuterBox.Location = New System.Drawing.Point(22, 229)
+        Me.chkOuterBox.Name = "chkOuterBox"
+        Me.chkOuterBox.Size = New System.Drawing.Size(97, 24)
+        Me.chkOuterBox.TabIndex = 13
+        Me.chkOuterBox.Text = "Outer box"
+        Me.chkOuterBox.UseVisualStyleBackColor = True
+        '
+        'cboOrigin
+        '
+        Me.cboOrigin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "MatrixWorkOriginCorner", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.cboOrigin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboOrigin.FormattingEnabled = True
+        Me.cboOrigin.Items.AddRange(New Object() {"BL", "BR", "TL", "TR", "CTR"})
+        Me.cboOrigin.Location = New System.Drawing.Point(266, 192)
+        Me.cboOrigin.Name = "cboOrigin"
+        Me.cboOrigin.Size = New System.Drawing.Size(74, 28)
+        Me.cboOrigin.TabIndex = 12
+        Me.cboOrigin.Text = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.MatrixWorkOriginCorner
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -174,6 +236,60 @@ Partial Class frmMain
         Me.Label6.Size = New System.Drawing.Size(183, 20)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Matrix work origin corner:"
+        '
+        'nudSpeedIncrement
+        '
+        Me.nudSpeedIncrement.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "LaserSpeedIncrement", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.nudSpeedIncrement.Location = New System.Drawing.Point(266, 160)
+        Me.nudSpeedIncrement.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.nudSpeedIncrement.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nudSpeedIncrement.Name = "nudSpeedIncrement"
+        Me.nudSpeedIncrement.Size = New System.Drawing.Size(74, 26)
+        Me.nudSpeedIncrement.TabIndex = 10
+        Me.nudSpeedIncrement.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.LaserSpeedIncrement
+        '
+        'nudMatrixSize
+        '
+        Me.nudMatrixSize.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "SquareSize", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.nudMatrixSize.Location = New System.Drawing.Point(266, 32)
+        Me.nudMatrixSize.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.nudMatrixSize.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudMatrixSize.Name = "nudMatrixSize"
+        Me.nudMatrixSize.Size = New System.Drawing.Size(74, 26)
+        Me.nudMatrixSize.TabIndex = 2
+        Me.nudMatrixSize.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.SquareSize
+        '
+        'nudSpeedStart
+        '
+        Me.nudSpeedStart.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "LaserSpeedStart", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.nudSpeedStart.Location = New System.Drawing.Point(266, 128)
+        Me.nudSpeedStart.Maximum = New Decimal(New Integer() {1500, 0, 0, 0})
+        Me.nudSpeedStart.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.nudSpeedStart.Name = "nudSpeedStart"
+        Me.nudSpeedStart.Size = New System.Drawing.Size(74, 26)
+        Me.nudSpeedStart.TabIndex = 8
+        Me.nudSpeedStart.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.LaserSpeedStart
+        '
+        'nudLaserStart
+        '
+        Me.nudLaserStart.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "LaserPowerStart", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.nudLaserStart.Location = New System.Drawing.Point(266, 64)
+        Me.nudLaserStart.Maximum = New Decimal(New Integer() {91, 0, 0, 0})
+        Me.nudLaserStart.Name = "nudLaserStart"
+        Me.nudLaserStart.Size = New System.Drawing.Size(74, 26)
+        Me.nudLaserStart.TabIndex = 4
+        Me.nudLaserStart.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.LaserPowerStart
+        '
+        'nudLaserIncrement
+        '
+        Me.nudLaserIncrement.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "LaserPowerIncrement", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.nudLaserIncrement.Location = New System.Drawing.Point(266, 96)
+        Me.nudLaserIncrement.Maximum = New Decimal(New Integer() {12, 0, 0, 0})
+        Me.nudLaserIncrement.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nudLaserIncrement.Name = "nudLaserIncrement"
+        Me.nudLaserIncrement.Size = New System.Drawing.Size(74, 26)
+        Me.nudLaserIncrement.TabIndex = 6
+        Me.nudLaserIncrement.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.LaserPowerIncrement
         '
         'GroupBox1
         '
@@ -197,6 +313,18 @@ Partial Class frmMain
         Me.Label5.TabIndex = 19
         Me.Label5.Text = "Text speed [mm/min]:"
         '
+        'nudTextSpeed
+        '
+        Me.nudTextSpeed.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "TextLaserSpeed", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.nudTextSpeed.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.nudTextSpeed.Location = New System.Drawing.Point(266, 32)
+        Me.nudTextSpeed.Maximum = New Decimal(New Integer() {2000, 0, 0, 0})
+        Me.nudTextSpeed.Minimum = New Decimal(New Integer() {50, 0, 0, 0})
+        Me.nudTextSpeed.Name = "nudTextSpeed"
+        Me.nudTextSpeed.Size = New System.Drawing.Size(74, 26)
+        Me.nudTextSpeed.TabIndex = 20
+        Me.nudTextSpeed.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.TextLaserSpeed
+        '
         'lblTextPower
         '
         Me.lblTextPower.AutoSize = True
@@ -205,6 +333,16 @@ Partial Class frmMain
         Me.lblTextPower.Size = New System.Drawing.Size(154, 20)
         Me.lblTextPower.TabIndex = 21
         Me.lblTextPower.Text = "Text laser power [%]:"
+        '
+        'nudTextPower
+        '
+        Me.nudTextPower.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "TextLaserPower", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.nudTextPower.Location = New System.Drawing.Point(266, 64)
+        Me.nudTextPower.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nudTextPower.Name = "nudTextPower"
+        Me.nudTextPower.Size = New System.Drawing.Size(74, 26)
+        Me.nudTextPower.TabIndex = 22
+        Me.nudTextPower.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.TextLaserPower
         '
         'btnExport
         '
@@ -283,17 +421,6 @@ Partial Class frmMain
         Me.btnPreview.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnPreview.UseVisualStyleBackColor = True
         '
-        'picThumbnail
-        '
-        Me.picThumbnail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.picThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picThumbnail.Location = New System.Drawing.Point(177, 1)
-        Me.picThumbnail.Name = "picThumbnail"
-        Me.picThumbnail.Size = New System.Drawing.Size(200, 200)
-        Me.picThumbnail.TabIndex = 17
-        Me.picThumbnail.TabStop = False
-        Me.picThumbnail.Visible = False
-        '
         'dlgSave
         '
         Me.dlgSave.CheckFileExists = True
@@ -301,147 +428,6 @@ Partial Class frmMain
         'errProvider
         '
         Me.errProvider.ContainerControl = Me
-        '
-        'nudTextSpeed
-        '
-        Me.nudTextSpeed.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "TextLaserSpeed", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.nudTextSpeed.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudTextSpeed.Location = New System.Drawing.Point(266, 32)
-        Me.nudTextSpeed.Maximum = New Decimal(New Integer() {2000, 0, 0, 0})
-        Me.nudTextSpeed.Minimum = New Decimal(New Integer() {50, 0, 0, 0})
-        Me.nudTextSpeed.Name = "nudTextSpeed"
-        Me.nudTextSpeed.Size = New System.Drawing.Size(74, 26)
-        Me.nudTextSpeed.TabIndex = 20
-        Me.nudTextSpeed.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.TextLaserSpeed
-        '
-        'nudTextPower
-        '
-        Me.nudTextPower.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "TextLaserPower", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.nudTextPower.Location = New System.Drawing.Point(266, 64)
-        Me.nudTextPower.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nudTextPower.Name = "nudTextPower"
-        Me.nudTextPower.Size = New System.Drawing.Size(74, 26)
-        Me.nudTextPower.TabIndex = 22
-        Me.nudTextPower.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.TextLaserPower
-        '
-        'chkCross
-        '
-        Me.chkCross.AutoSize = True
-        Me.chkCross.Checked = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.DrawCrossMark
-        Me.chkCross.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkCross.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "DrawCrossMark", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.chkCross.Location = New System.Drawing.Point(22, 259)
-        Me.chkCross.Name = "chkCross"
-        Me.chkCross.Size = New System.Drawing.Size(108, 24)
-        Me.chkCross.TabIndex = 16
-        Me.chkCross.Text = "Cross mark"
-        Me.chkCross.UseVisualStyleBackColor = True
-        '
-        'chkInnerBox
-        '
-        Me.chkInnerBox.AutoSize = True
-        Me.chkInnerBox.Checked = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.DrawInnerBox
-        Me.chkInnerBox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkInnerBox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "DrawInnerBox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.chkInnerBox.Location = New System.Drawing.Point(246, 229)
-        Me.chkInnerBox.Name = "chkInnerBox"
-        Me.chkInnerBox.Size = New System.Drawing.Size(94, 24)
-        Me.chkInnerBox.TabIndex = 15
-        Me.chkInnerBox.Text = "Inner box"
-        Me.chkInnerBox.UseVisualStyleBackColor = True
-        '
-        'chkMiddleBox
-        '
-        Me.chkMiddleBox.AutoSize = True
-        Me.chkMiddleBox.Checked = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.DrawMiddleBox
-        Me.chkMiddleBox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkMiddleBox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "DrawMiddleBox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.chkMiddleBox.Location = New System.Drawing.Point(131, 229)
-        Me.chkMiddleBox.Name = "chkMiddleBox"
-        Me.chkMiddleBox.Size = New System.Drawing.Size(103, 24)
-        Me.chkMiddleBox.TabIndex = 14
-        Me.chkMiddleBox.Text = "Middle box"
-        Me.chkMiddleBox.UseVisualStyleBackColor = True
-        '
-        'chkOuterBox
-        '
-        Me.chkOuterBox.AutoSize = True
-        Me.chkOuterBox.Checked = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.DrawOuterBox
-        Me.chkOuterBox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkOuterBox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "DrawOuterBox", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.chkOuterBox.Location = New System.Drawing.Point(22, 229)
-        Me.chkOuterBox.Name = "chkOuterBox"
-        Me.chkOuterBox.Size = New System.Drawing.Size(97, 24)
-        Me.chkOuterBox.TabIndex = 13
-        Me.chkOuterBox.Text = "Outer box"
-        Me.chkOuterBox.UseVisualStyleBackColor = True
-        '
-        'cboOrigin
-        '
-        Me.cboOrigin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "MatrixWorkOriginCorner", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.cboOrigin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboOrigin.FormattingEnabled = True
-        Me.cboOrigin.Items.AddRange(New Object() {"BL", "BR", "TL", "TR", "CTR"})
-        Me.cboOrigin.Location = New System.Drawing.Point(266, 192)
-        Me.cboOrigin.Name = "cboOrigin"
-        Me.cboOrigin.Size = New System.Drawing.Size(74, 28)
-        Me.cboOrigin.TabIndex = 12
-        Me.cboOrigin.Text = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.MatrixWorkOriginCorner
-        '
-        'nudSpeedIncrement
-        '
-        Me.nudSpeedIncrement.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "LaserSpeedIncrement", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.nudSpeedIncrement.Location = New System.Drawing.Point(266, 160)
-        Me.nudSpeedIncrement.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
-        Me.nudSpeedIncrement.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nudSpeedIncrement.Name = "nudSpeedIncrement"
-        Me.nudSpeedIncrement.Size = New System.Drawing.Size(74, 26)
-        Me.nudSpeedIncrement.TabIndex = 10
-        Me.nudSpeedIncrement.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.LaserSpeedIncrement
-        '
-        'nudMatrixSize
-        '
-        Me.nudMatrixSize.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "SquareSize", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.nudMatrixSize.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudMatrixSize.Location = New System.Drawing.Point(266, 32)
-        Me.nudMatrixSize.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
-        Me.nudMatrixSize.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
-        Me.nudMatrixSize.Name = "nudMatrixSize"
-        Me.nudMatrixSize.Size = New System.Drawing.Size(74, 26)
-        Me.nudMatrixSize.TabIndex = 2
-        Me.nudMatrixSize.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.SquareSize
-        '
-        'nudSpeedStart
-        '
-        Me.nudSpeedStart.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "LaserSpeedStart", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.nudSpeedStart.Location = New System.Drawing.Point(266, 128)
-        Me.nudSpeedStart.Maximum = New Decimal(New Integer() {1500, 0, 0, 0})
-        Me.nudSpeedStart.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.nudSpeedStart.Name = "nudSpeedStart"
-        Me.nudSpeedStart.Size = New System.Drawing.Size(74, 26)
-        Me.nudSpeedStart.TabIndex = 8
-        Me.nudSpeedStart.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.LaserSpeedStart
-        '
-        'nudLaserStart
-        '
-        Me.nudLaserStart.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "LaserPowerStart", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.nudLaserStart.Location = New System.Drawing.Point(266, 64)
-        Me.nudLaserStart.Maximum = New Decimal(New Integer() {91, 0, 0, 0})
-        Me.nudLaserStart.Name = "nudLaserStart"
-        Me.nudLaserStart.Size = New System.Drawing.Size(74, 26)
-        Me.nudLaserStart.TabIndex = 4
-        Me.nudLaserStart.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.LaserPowerStart
-        '
-        'nudLaserIncrement
-        '
-        Me.nudLaserIncrement.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "LaserPowerIncrement", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.nudLaserIncrement.Location = New System.Drawing.Point(266, 96)
-        Me.nudLaserIncrement.Maximum = New Decimal(New Integer() {12, 0, 0, 0})
-        Me.nudLaserIncrement.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nudLaserIncrement.Name = "nudLaserIncrement"
-        Me.nudLaserIncrement.Size = New System.Drawing.Size(74, 26)
-        Me.nudLaserIncrement.TabIndex = 6
-        Me.nudLaserIncrement.Value = Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default.LaserPowerIncrement
         '
         'frmMain
         '
@@ -456,7 +442,6 @@ Partial Class frmMain
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.grpMatrixSpecs)
         Me.Controls.Add(Me.pnlGraphics)
-        Me.Controls.Add(Me.picThumbnail)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -469,17 +454,16 @@ Partial Class frmMain
         Me.pnlGraphics.ResumeLayout(False)
         Me.grpMatrixSpecs.ResumeLayout(False)
         Me.grpMatrixSpecs.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.picThumbnail, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.errProvider, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nudTextSpeed, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nudTextPower, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudSpeedIncrement, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudMatrixSize, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudSpeedStart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudLaserStart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudLaserIncrement, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.nudTextSpeed, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudTextPower, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.errProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -516,7 +500,6 @@ Partial Class frmMain
     Friend WithEvents imgIcons As ImageList
     Friend WithEvents btnCopy As Button
     Friend WithEvents btnPreview As Button
-    Friend WithEvents picThumbnail As PictureBox
     Friend WithEvents dlgSave As SaveFileDialog
     Friend WithEvents errProvider As ErrorProvider
 End Class
