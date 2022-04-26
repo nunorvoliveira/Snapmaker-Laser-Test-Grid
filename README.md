@@ -39,13 +39,13 @@ So, use with caution.
 
 If you don't want to run the pre-compiled executable, you can install [Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/community/) from microsoft - it's free - with the needed components for Visual Basic .NET Framework and you clone this repository and build it yourself.
 
-## Safety, Safety, Safety!
+# Safety, Safety, Safety!
 
 Snapmaker uses a class 4 laser. Exposure to the eyes or skin can give you severe burns and cause blindness. Please do use all safety measures as an enclosure and safety goggles. 
 
 For a complete list of safety measures, please visit Snapmaker site for [Snapmaker Safety Guidelines](https://support.snapmaker.com/hc/en-us/articles/4417388670871-1-Safety-Guidelines)
 
-## Buy Me a Coffee?
+# Buy Me a Coffee?
 
 If you want to support my work, feel free to buy me a coffee via PayPal.
 
