@@ -1,7 +1,9 @@
 
 # Snapmaker Laser Test Grid
 
-Do you ever feel the need to tweak the speed and power of the laser when engraving on your Snapmaker?
+## Background
+
+Do you ever feel the need to tweak the speed and power of the laser when engraving on your Snapmaker and were not sure what setting to use on a specific material?
 
 I do!
 
@@ -17,7 +19,7 @@ To use the application, simply download the 2 files on the **Compiled** folder a
 
 ![](/Misc/Images/01.%20Screenshot.png)
 
-# Warning 1 :warning:
+## Warning 1 :warning:
 
 This is a very early release, and it's working, but may contain bugs. Please report them if you find them so I can fix them as soon as possible.
 
@@ -25,11 +27,11 @@ Below an example of a piece of plywood laser engraved with G-Code from this appl
 
 ![](/Misc/Images/02.%20Sample%20burn.jpg)
 
-# Warning 2 :zap:
+## Warning 2 :zap:
 
 The executable file on the compiled folder is an executable file. Running an executable file from an unknown/untrusted source can be dangerous.
 
-And I am an unknown and untrusted source to you.
+And I am an unknown/untrusted source to you.
 
 Yes, It's safe. Yes, it only does what it is supposed to do. But I can't prove that to you and you can't know if I'm being honest.
 
