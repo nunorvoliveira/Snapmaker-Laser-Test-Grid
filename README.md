@@ -35,7 +35,7 @@ Yes, It's safe. Yes, it only does what it is supposed to do. But I can't prove t
 
 So, use with caution.
 
-## What can I do?
+### What can I do?
 
 If you don't want to run the pre-compiled executable, you can install [Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/community/) from microsoft - it's free - with the needed components for Visual Basic .NET Framework and you clone this repository and build it yourself.
 
