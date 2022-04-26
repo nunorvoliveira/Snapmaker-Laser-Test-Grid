@@ -15,7 +15,7 @@ The file contains the G-Code to build the grid you configured with the laser hea
 
 An image thumbnail is added to the file so you can see it on the touch screen.
 
-To use the application, simply download the 2 files on the **Compiled** folder and run the application. Please refer below to Warning 2! This application requirements is .NET Framework 4.7.2. If you don't already have it, you can [install it from Microsoft site](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472).
+To use the application, simply download the 2 files on the **Compiled** folder to the same folder on your computer and run the application. Please refer below to Warning 2! This application requirements is .NET Framework 4.7.2. If you don't already have it, you can [install it from Microsoft site](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472).
 
 ![](/Misc/Images/01.%20Screenshot.png)
 
