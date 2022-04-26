@@ -29,9 +29,7 @@ Below an example of a piece of plywood laser engraved with G-Code from this appl
 
 ## Warning 2 :zap:
 
-The executable file on the compiled folder is an executable file. Running an executable file from an unknown/untrusted source can be dangerous.
-
-And I am an unknown/untrusted source to you.
+The executable file on the compiled folder is an executable file. Running an executable file from an unknown/untrusted source can be dangerous. And I am an unknown/untrusted source to you.
 
 Yes, It's safe. Yes, it only does what it is supposed to do. But I can't prove that to you and you can't know if I'm being honest.
 
