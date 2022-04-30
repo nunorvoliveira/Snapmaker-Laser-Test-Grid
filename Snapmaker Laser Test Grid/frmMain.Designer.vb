@@ -253,7 +253,7 @@ Partial Class frmMain
         Me.nudMatrixSize.DataBindings.Add(New System.Windows.Forms.Binding("Value", Global.Snapmaker_Laser_Test_Grid.My.MySettings.Default, "SquareSize", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.nudMatrixSize.Location = New System.Drawing.Point(266, 32)
         Me.nudMatrixSize.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
-        Me.nudMatrixSize.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudMatrixSize.Minimum = New Decimal(New Integer() {50, 0, 0, 0})
         Me.nudMatrixSize.Name = "nudMatrixSize"
         Me.nudMatrixSize.Size = New System.Drawing.Size(74, 26)
         Me.nudMatrixSize.TabIndex = 2
